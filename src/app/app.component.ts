@@ -7,8 +7,9 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
-  list: any = []
+  list: any = [];
   task: string = "";
+  comment: string = ""; // Added property for task comments
 
   ngOnInit(): void {
     this.GetAll();
@@ -17,11 +18,13 @@ export class AppComponent implements OnInit {
   Add() {
     let obj = {
       TaskName: this.task,
-      IsComplete: false
+      IsComplete: false,
+      Comment: this.comment // Include the comment property
     };
     this.list.push(obj);
     this.Save();
     this.task = '';
+    this.comment = ''; // Clear comment after adding task
   }
 
   ChangeStatus(index: number, currentValue: boolean) {
@@ -41,7 +44,14 @@ export class AppComponent implements OnInit {
       this.Save();
     }
   }
-
+  Edit(index: number) {
+    if (this.list.length > index) {
+      let taskToEdit = this.list[index];
+      this.task = taskToEdit.TaskName;
+      this.comment = taskToEdit.Comment;
+    
+    }
+  }
   DeleteAll() {
     this.list = [];
     this.Save();
