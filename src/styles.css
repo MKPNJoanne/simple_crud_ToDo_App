@@ -24,6 +24,29 @@ body {
     color: #c2bbbb;
     margin: 0;
   }
+  .motivation-container {
+    position: absolute;
+    top: 30px;
+    right: 90px;
+    text-align: right;
+    padding: 20px;
+    background-color: rgba(158, 158, 158, 0.1);
+    border-radius: 10px;
+    width: 100px;
+    height: 100px;
+  }
+  
+  .motivation-container img {
+    width: 100px;
+    height: 100px;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    border-radius: 5px;
+    margin-bottom: 2px;
+  }
+  
+
   .task-button {
     background-color: #9f29ce;
     border-color: #05213f;

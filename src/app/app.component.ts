@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { MotivationalService } from './motivational.service';
 
 
 @Component({
@@ -8,15 +9,34 @@ import { Component, OnInit } from '@angular/core';
 })
 export class AppComponent implements OnInit {
 
+  motivationalData: any[] = [];
+  selectedMotivation: any = {};
+
+  
+
   list: any = [];
   task: string = "";
   comment: string = ""; 
   today: Date = new Date();
 
-  ngOnInit(): void {
+  constructor(private motivationalService: MotivationalService) {}
+
+    ngOnInit(): void {
+    this.motivationalData = this.motivationalService.getMotivationalData();
+    this.getRandomMotivation();
+
     this.GetAll();
+
+    setInterval(() => {
+      this.getRandomMotivation();
+    }, 10000);
   }
 
+  getRandomMotivation(): void {
+    const randomIndex = Math.floor(Math.random() * this.motivationalData.length);
+    this.selectedMotivation = this.motivationalData[randomIndex];
+  }
+  
   Add() {
     let obj = {
       TaskName: this.task,
@@ -27,6 +47,7 @@ export class AppComponent implements OnInit {
     this.Save();
     this.task = '';
     this.comment = ''; 
+    this.getRandomMotivation(); 
   }
 
   ChangeStatus(index: number, currentValue: boolean) {

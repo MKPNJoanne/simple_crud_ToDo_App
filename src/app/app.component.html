@@ -2,6 +2,9 @@
 
 <div class="container mt-4">
   <h1 class="notes-title">My ToDo List</h1>
+  <div class="motivation-container">
+    <img [src]="selectedMotivation.imageUrl" alt="Motivational Image">
+  </div>
   <div class="col-md-6">
     <p class="today-date">{{ today | date:'fullDate' }}</p>
   </div>
