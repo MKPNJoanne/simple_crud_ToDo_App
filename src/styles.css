@@ -1,5 +1,5 @@
 body {
-    background-image: url('https://w0.peakpx.com/wallpaper/241/159/HD-wallpaper-black-stars-black-aesthetic.jpg'); 
+    background-image: url('assets/peakpx.jpg'); 
     background-size: cover;
     background-repeat: no-repeat;
     background-attachment: fixed;
@@ -16,9 +16,14 @@ body {
   .notes-title {
     color: #fff; 
     font-size: 24px;
+    font-weight: bold;
     margin-bottom: 20px; 
   }
-  
+  .today-date {
+    font-size: 18px;
+    color: #c2bbbb;
+    margin: 0;
+  }
   .task-button {
     background-color: #9f29ce;
     border-color: #05213f;

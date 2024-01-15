@@ -1,5 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 
+
 @Component({
   selector: 'app-root',
   templateUrl: './app.component.html',
@@ -9,7 +10,8 @@ export class AppComponent implements OnInit {
 
   list: any = [];
   task: string = "";
-  comment: string = ""; // Added property for task comments
+  comment: string = ""; 
+  today: Date = new Date();
 
   ngOnInit(): void {
     this.GetAll();
@@ -19,12 +21,12 @@ export class AppComponent implements OnInit {
     let obj = {
       TaskName: this.task,
       IsComplete: false,
-      Comment: this.comment // Include the comment property
+      Comment: this.comment 
     };
     this.list.push(obj);
     this.Save();
     this.task = '';
-    this.comment = ''; // Clear comment after adding task
+    this.comment = ''; 
   }
 
   ChangeStatus(index: number, currentValue: boolean) {
