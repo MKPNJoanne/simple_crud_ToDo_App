@@ -61,6 +61,7 @@
               ],
               "outputHashing": "all"
             },
+            
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -74,6 +75,7 @@
           "configurations": {
             "production": {
               "buildTarget": "simple_crud_ToDo:build:production"
+              
             },
             "development": {
               "buildTarget": "simple_crud_ToDo:build:development"
