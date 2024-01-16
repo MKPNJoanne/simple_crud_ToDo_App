@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "simple_crud_ToDo": {
+    "crud_ToDo": {
       "projectType": "application",
       "schematics": {
         "@schematics/angular:component": {
@@ -23,7 +23,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/simple-crud-to-do",
+            "outputPath": "dist/crud-to-do",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -35,7 +35,6 @@
               "src/assets"
             ],
             "styles": [
-              "node_modules/bootstrap/dist/css/bootstrap.min.css",
               "src/styles.css"
             ],
             "scripts": [],
@@ -61,7 +60,6 @@
               ],
               "outputHashing": "all"
             },
-            
             "development": {
               "optimization": false,
               "extractLicenses": false,
@@ -74,11 +72,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "simple_crud_ToDo:build:production"
-              
+              "buildTarget": "crud_ToDo:build:production"
             },
             "development": {
-              "buildTarget": "simple_crud_ToDo:build:development"
+              "buildTarget": "crud_ToDo:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -86,7 +83,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "simple_crud_ToDo:build"
+            "buildTarget": "crud_ToDo:build"
           }
         },
         "test": {
@@ -111,6 +108,6 @@
     }
   },
   "cli": {
-    "analytics": "0a3ad410-57e6-4a32-853c-2360b970868b"
+    "analytics": "5f2f4176-3d9b-40f7-b863-c63987eb2929"
   }
 }
